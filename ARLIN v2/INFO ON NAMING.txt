@@ -1,0 +1,12 @@
+please name your files as follows:
+
+
+{date}_{Treatment1}_{Treatment2}_{PictureNumber}_XY{FOV}_{channel}.tif
+
+
+ARLIN assumes the date is the same for all images in your experiment so it does not read in the date
+
+
+The resulting excel files will have sheets sorted as "Treatment1_Treatment2"
+
+ARLIN interprets the FOV to be equal to {PictureNumber}-{FOV}. Keep this in mind if you see any error messages, but otherwise it shouldn't affect you. 
