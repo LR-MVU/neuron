@@ -59,7 +59,7 @@ def main():
 
 
     ######################## Getting max images and annotation images #################
-    maxfile_pattern = re.compile("MAX_(.*?)_(?:div|DIV)([0-9]?[0-9])_(.*?)_(.*?)_(?:xy|XY)([0-9]?[0-9])_" + map2 + ".gif")
+    maxfile_pattern = re.compile("MAX_(.*?)_(.*?)_(.*?)_(.*?)_(?:xy|XY)([0-9]?[0-9])_" + map2 + ".gif")
     maxfile_matches = ui.regexMatchFilter(os.listdir(), maxfile_pattern)
 
     missing_data = []
@@ -77,7 +77,7 @@ def main():
             print("\n" + max_filename)
 
             annot_files = glob.glob(max_filename + "_*.gif") # grab all possible annotation files
-            base_loc = print_skel_dir + "/" + maxImg.fullname[:-4] #base name for prints/skels
+            base_loc = print_skel_dir + "/" + max_filename #base name for prints/skels
 
             if dend_analysis:
                 dendAnnot_pattern = re.compile(max_filename + "_([0-9]?[0-9])_dendAnnot.gif")

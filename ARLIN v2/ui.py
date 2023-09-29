@@ -1,3 +1,8 @@
+__author__ = "Zoe Wefers"
+__credits__ = ["Ryan Huang"]
+__version__ = "1.0.0"
+__maintainer__ = "Zoe Wefers"
+__email__ = "zoe.wefers@mail.mcgill.ca"
 
 """Purpose: Function for obtaining folder paths, channel names and numerical values from user.Formats and saves txt and excel files."""
 
@@ -16,14 +21,14 @@ class MaxImg:
     def __init__(self, match):
       self.fullname = match.group(0)
       self.experiment = match.group(1)
-      self.DIV = match.group(2)
-      self.treatment = match.group(3)
-      self.FOV = match.group(4, 5) #Maybe 4 is plate not FOV
+      self.Treat1_Treat2 = match.group(2) + "_" +match.group(3)
+      self.FOV = match.group(4) + "-" +match.group(5) #Maybe 4 is plate not FOV
       self.dendAnnot = [] #list accommodates multiple annotation images
       self.somAnnot = []
+      
 
     def name(self):
-      name =  "EXP: " + self.experiment + ", DIV: " + self.DIV + ", Treatment: " + self.treatment + ", FOV: " + self.FOV[0] +  "-" + self.FOV[1]
+      name =  "EXP: " + self.experiment + ", Treatment: " + self.Treat1_Treat2 + ", FOV: " + self.FOV
       return name
 
 class AnnotImg:
