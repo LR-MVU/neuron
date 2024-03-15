@@ -115,7 +115,7 @@ for PEP in uniquemPEPs:
         distances=[]
         for entry in repeatedEntries[0]:
             distances.append(summary[entry,-1])
-        entry_id=repeatedEntries[0][np.argmin(np.array(distances))]
+        entry_id=repeatedEntries[0][np.argmax(np.array(distances))]
         textDistance.write("\t".join(summaryAmpDist[entry_id,:]))
         textDistance.write("\n")
     else:
